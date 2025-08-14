@@ -1,0 +1,54 @@
+# Rclone Configuration Example for Icedrive
+#
+# To use this configuration:
+# 1. Copy to ~/.config/rclone/rclone.conf
+# 2. Replace placeholder values with your actual credentials
+# 3. Test with: rclone ls icedrive:
+#
+# To create interactively instead:
+# Run: rclone config
+# Choose: n (new remote)
+# Name: icedrive
+# Storage: webdav
+# URL: https://webdav.icedrive.io
+# Vendor: other
+# User: your-icedrive-email
+# Password: your-icedrive-password
+
+[icedrive]
+type = webdav
+url = https://webdav.icedrive.io
+vendor = other
+user = YOUR_ICEDRIVE_EMAIL
+pass = YOUR_ENCRYPTED_PASSWORD
+
+# To encrypt password:
+# rclone obscure YOUR_ICEDRIVE_PASSWORD
+
+# Alternative cloud storage options:
+
+# [gdrive]
+# type = drive
+# client_id = YOUR_CLIENT_ID
+# client_secret = YOUR_CLIENT_SECRET
+# scope = drive
+# token = {"access_token":"...","token_type":"Bearer","refresh_token":"...","expiry":"..."}
+
+# [s3-backup]
+# type = s3
+# provider = AWS
+# access_key_id = YOUR_ACCESS_KEY
+# secret_access_key = YOUR_SECRET_KEY
+# region = us-east-1
+# location_constraint = us-east-1
+
+# [backblaze]
+# type = b2
+# account = YOUR_ACCOUNT_ID
+# key = YOUR_APPLICATION_KEY
+
+# Test commands:
+# rclone ls icedrive:                    # List all files
+# rclone mkdir icedrive:backups/rensto   # Create backup directory
+# rclone copy test.txt icedrive:backups/ # Upload test file
+# rclone sync ./local icedrive:remote    # Sync directories

@@ -1,0 +1,97 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+:root {
+  --background: #0B1318;
+  --card: #111827;
+  --text: #E5E7EB;
+  --muted: #94A3B8;
+  --accent1: #2F6A92;
+  --accent2: #FF6536;
+  --border: rgba(255,255,255,0.08);
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.glass {
+  background-color: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.logo-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--accent2), var(--accent1));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, var(--accent2), var(--accent1));
+}
+
+.btn-primary {
+  background: linear-gradient(to right, var(--accent2), var(--accent1));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  color: var(--text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(17, 24, 39, 0.7);
+}
+
+.card {
+  background-color: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.section {
+  padding: 4rem 1rem;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
